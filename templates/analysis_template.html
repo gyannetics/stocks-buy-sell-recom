@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Fundamental Analysis</title>
+</head>
+<body>
+    <h1>Fundamental Analysis of {{ company }}</h1>
+    <table border="1">
+        <tr><td>Market Capitalization:</td><td>{{ fundamentals.mkt_cap }}</td><td>The total market value of the company's outstanding shares.</td></tr>
+        <tr><td>P/E Ratio (TTM):</td><td>{{ fundamentals.pe_ratio }}</td><td>Price-to-Earnings ratio based on the last twelve months. A negative value indicates the company is currently unprofitable.</td></tr>
+        <tr><td>P/B Ratio:</td><td>{{ fundamentals.pb_ratio }}</td><td>Price-to-Book ratio, comparing market value to book value.</td></tr>
+        <tr><td>Industry P/E:</td><td>{{ fundamentals.industry_pe }}</td><td>Average P/E ratio of the industry.</td></tr>
+        <tr><td>Debt to Equity Ratio:</td><td>{{ fundamentals.debt_to_equity }}</td><td>Measure of a company's financial leverage, calculated by dividing total liabilities by stockholders' equity.</td></tr>
+        <tr><td>Return on Equity (ROE):</td><td>{{ fundamentals.roe }}</td><td>Measure of financial performance, calculated by dividing net income by shareholders' equity. A negative value indicates a loss.</td></tr>
+        <tr><td>Earnings Per Share (EPS):</td><td>{{ fundamentals.eps }}</td><td>Portion of a company's profit allocated to each outstanding share of common stock. A negative value indicates a loss.</td></tr>
+        <tr><td>Dividend Yield:</td><td>{{ fundamentals.div_yield }}</td><td>Financial ratio that shows how much a company pays out in dividends each year relative to its stock price.</td></tr>
+        <tr><td>Book Value:</td><td>{{ fundamentals.book_value }}</td><td>Net asset value of the company, calculated by total assets minus intangible assets and liabilities.</td></tr>
+        <tr><td>Face Value:</td><td>{{ fundamentals.face_value }}</td><td>Nominal value of the company's stock.</td></tr>
+    </table>
+    <h2>Stock Trend Analysis</h2>
+    <p>{{ stock_trend }}</p>
+    <h2>Recommendation: {{ recommendation }}</h2>
+    <p>{{ 'The company shows potential for growth based on its current financial metrics.' if 'Buy' in recommendation else 'The company is currently unprofitable and shows signs of financial distress.' if 'Sell' in recommendation else 'The company\'s financial status is stable, and it may be wise to hold the stock for now.' }}</p>
+</body>
+</html>

@@ -1,0 +1,5 @@
+fastapi
+gradio
+yfinance
+uvicorn
+pydantic
